@@ -1,16 +1,15 @@
 "use client"
 
+import Link from "next/link";
 import { FormEvent, useRef } from "react";
 import { useContext } from "react";
 import { UserContext } from "@/context/UserContext";
-import { useRouter } from "next/router";
 
 export default function FormularioDeLogin() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
   const { user, setUser } = useContext(UserContext);
-  const router = useRouter();
 
   async function mandarDatosDeLogin(evento: FormEvent) {
     evento.preventDefault();
@@ -24,7 +23,7 @@ export default function FormularioDeLogin() {
 
     console.log(datosAEnviar);
 
-    const respuesta = await fetch("https://localhost:3000/api/usuarios/login", {
+    const respuesta = await fetch("http://localhost:3000/api/usuarios/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,9 +41,6 @@ export default function FormularioDeLogin() {
 
     // Guardar el token en el contexto de usuario
     setUser({ token });
-
-    // Redirigir al usuario a la página de perfil o a donde desees
-    router.push("/perfil");
   }
 
   return (
@@ -54,6 +50,9 @@ export default function FormularioDeLogin() {
         <input ref={passwordRef} type="password" placeholder="Contraseña" />
         <input type="submit" className="text-white" value="Iniciar sesión" />
       </form>
+      <Link href="/perfil">
+        <button>Ir al perfil</button>
+      </Link>
     </>
   );
 }
