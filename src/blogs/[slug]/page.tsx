@@ -7,9 +7,10 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 export async function generateStaticParams(){
     const archivos = fs.readdirSync(path.join('src/blogs'));
 
-    const rutas = archivos.map((nombreDeArchivo) =>({
-        slug: nombreDeArchivo.replace(".mdx", "")
-    }))
+    const rutas = archivos.map((nombreDeArchivo) => ({
+        slug: nombreDeArchivo,
+      }));
+      
     
     return rutas;
 }
@@ -38,4 +39,3 @@ export default function Page({params}: {params: {slug: string}}) {
     )
 }
 
-//mostrar el contenido de los blogs en su respectiva pagina

@@ -1,0 +1,78 @@
+"use client"
+
+import { useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid'
+
+const navLinks = [
+    {
+        title: 'About',
+        path: '#about',
+    },
+    {
+        title: 'Projects',
+        path: '#projects',
+    },
+    {
+        title: 'Contact',
+        path: '#contact',
+    }
+]
+export default function Header() {
+
+    const [navbarOpen, setNavbarOpen] = useState(false)
+
+    return (
+        <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
+            <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
+                <Link
+                    href={"/"}
+                    className="text-2xl md:text-5xl text-white font-semibold"
+                >
+                    <Image
+                        width={70}
+                        height={70}
+                        src="/images/LOGO.webp"
+                        alt="Logo"
+                    />
+                </Link>
+                <section className='flex gap-4'>
+                    <Link href="/auth/login">
+                        <button
+                            className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
+                        >
+                            Login
+                        </button>
+                    </Link>
+                    <Link href="/auth/registrarse">
+                        <button
+                            className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
+                        >
+                            Register
+                        </button>
+                    </Link>
+                </section>
+
+
+                <div className="mobile-menu block md:hidden">
+                    {!navbarOpen ? (
+                        <button
+                            onClick={() => setNavbarOpen(true)}
+                            className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+                        >
+                            <Bars3Icon className="h-5 w-5" />
+                        </button>
+                    ) : (
+                        <button
+                            onClick={() => setNavbarOpen(false)}
+                            className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+                        >
+                            <XMarkIcon className="h-5 w-5" />
+                        </button>
+                    )}
+                </div>
+            </div>
+        </nav>
+    )
+}

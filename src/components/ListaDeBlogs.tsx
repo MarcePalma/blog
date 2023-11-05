@@ -24,36 +24,44 @@ export default function ListaDeBlogs() {
     });
 
   return (
-    <section>
-      {blogs.map((blog) => (
-        <Link key={blog.slug} href={`/blogs/${blog.slug}`}>
-          <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-            <Image
-              alt="Office"
-              src="/images/blog-images/lorem-ipsum-image.png"
-              width={"56"}
-              height={"56"}
-              className="h-56 w-full object-cover"
-            />
+    <section id="blogs">
+      <h2 className="text-center text-4xl font-bold mt-4 mb-8 md:mb-12">
+        <span className="bg-clip-text bg-gradient-to-r text-white">
+          Blogs
+        </span>
 
-            <div className="bg-white p-4 sm:p-6">
-              <time className="block text-xs text-gray-500">
-                {blog.meta.date}
-              </time>
+      </h2>
+      <ul className="grid md:grid-cols-2 gap-8 md:gap-12">
+        {blogs.map((blog) => (
+          <Link key={blog.slug} href={`/blogs/${blog.slug}`}>
+            <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+              <Image
+                alt="Office"
+                src="/images/blog-images/lorem-ipsum-image.png"
+                width={"56"}
+                height={"56"}
+                className="h-56 w-full object-cover"
+              />
 
-              <a href="#">
-                <h3 className="mt-0.5 text-lg text-gray-900">
-                  {blog.meta.title}
-                </h3>
-              </a>
+              <section className="bg-gray-900 p-4 sm:p-6">
+                <time className="block text-xs text-gray-500">
+                  {blog.meta.date}
+                </time>
 
-              <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                {blog.meta.description}
-              </p>
-            </div>
-          </article>
-        </Link>
-      ))}
+                <a href="#">
+                  <h3 className="mt-0.5 text-lg text-white">
+                    {blog.meta.title}
+                  </h3>
+                </a>
+
+                <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                  {blog.meta.description}
+                </p>
+              </section>
+            </article>
+          </Link>
+        ))}
+      </ul>
     </section>
   );
 }
