@@ -30,7 +30,9 @@ export default function ListaDeBlogs() {
           <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
             <Image
               alt="Office"
-              src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+              src="/images/blog-images/lorem-ipsum-image.png"
+              width={"56"}
+              height={"56"}
               className="h-56 w-full object-cover"
             />
 
