@@ -9,7 +9,7 @@ export default function Page() {
   async function recuperarContrasenia(evento: FormEvent) {
     evento.preventDefault();
     const respuesta = await fetch(
-      "https://localhost:3000/api/recuperar",
+      "https://blog-blxphemsh-marcepalma.vercel.app/api/recuperar",
       {
         method: "POST",
         headers: {

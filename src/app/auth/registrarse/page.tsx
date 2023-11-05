@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <main>
       <FormularioDeRegistro />
-      <Link href="http://localhost:3000/auth/login">
+      <Link href="https://blog-blxphemsh-marcepalma.vercel.app/auth/login">
         <button> Ya tienes una cuenta? Click Aqui!</button>
       </Link>
 

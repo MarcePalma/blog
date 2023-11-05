@@ -1,9 +1,3 @@
-// Recuperar el email del usuario
-// buscar ese usuario en base de datos
-// despues vamos a crearle un token unico
-// despues vamos a mandarle el mail
-
-// en base a ese email va a poder acceder al cambi ode contrase;a
 import { PrismaClient } from "@prisma/client";
 import { sign } from "jsonwebtoken";
 
@@ -32,7 +26,7 @@ export async function POST(req: Request) {
     asunto: "Recupera tu contraseña",
     from_name: "Blog de Roberto",
     to_name: usuario.nombre,
-    link: `https://blog-de-roberto.vercel.app/auth/recuperar/${tokenUnicoParaRecuperacion}`,
+    link: `https://blog-blxphemsh-marcepalma.vercel.app/auth/recuperar/${tokenUnicoParaRecuperacion}`,
     user_email: datos.email,
   };
 
