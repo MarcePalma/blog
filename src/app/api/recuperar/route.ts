@@ -26,7 +26,7 @@ export async function POST(req: Request) {
     asunto: "Recupera tu contraseña",
     from_name: "Blog de Roberto",
     to_name: usuario.nombre,
-    link: `https://blog-blxphemsh-marcepalma.vercel.app/auth/recuperar/${tokenUnicoParaRecuperacion}`,
+    link: `/auth/recuperar/${tokenUnicoParaRecuperacion}`,
     user_email: datos.email,
   };
 

@@ -3,7 +3,6 @@ import path from 'path';
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
-//generar estaticamente todos los blogs
 export async function generateStaticParams(){
     const archivos = fs.readdirSync(path.join('src/blogs'));
 

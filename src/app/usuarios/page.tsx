@@ -1,6 +1,6 @@
 async function obtenerUsuarios() {
   const respuesta = await fetch(
-    "https://blog-blxphemsh-marcepalma.vercel.app/api/usuarios",
+    "/api/usuarios",
     {
       cache: "no-store",
     }
