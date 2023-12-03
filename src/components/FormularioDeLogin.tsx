@@ -25,7 +25,7 @@ export default function FormularioDeLogin() {
 
     console.log(datosAEnviar);
 
-    const respuesta = await fetch("http://localhost:3000/api/usuarios/login", {
+    const respuesta = await fetch("https://blog-eight-ruddy-60.vercel.app/api/usuarios/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export default function FormularioDeLogin() {
     <section className="bg-gray-50 dark:bg-[#121212]">
       <article className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <Link href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-          <Image width={700} height={700} className="w-8 h-8 mr-2" src="/images/LOGO.webp" alt="logo" />
+          <Image width={700} height={700} className="w-8 h-8 mr-2" src="/images/Logo.webp" alt="logo" />
           Seeyy Blog
         </Link>
         <section className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-[#121212] dark:border-gray-700">

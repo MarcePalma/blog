@@ -36,7 +36,7 @@ export default function Header() {
                     <Image
                         width={70}
                         height={70}
-                        src="/images/LOGO.webp"
+                        src="/images/Logo.webp"
                         alt="Logo"
                     />
                 </Link>
