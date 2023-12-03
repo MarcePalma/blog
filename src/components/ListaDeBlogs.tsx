@@ -13,6 +13,7 @@ export default function ListaDeBlogs() {
 
 
   const blogs = archivos
+    .filter((nombreDeArchivo) => nombreDeArchivo.endsWith(".mdx"))
     .map((nombreDeArchivo) => {
       const contenidoDelArchivo = fs.readFileSync(path.join(direccionDeMisBlogs, nombreDeArchivo), "utf-8");
       const { data: frontMatter } = matter(contenidoDelArchivo);
@@ -42,7 +43,7 @@ export default function ListaDeBlogs() {
                   className="h-56 w-full object-cover"
                 />
 
-                <section className="bg-gray-900 p-4 sm:p-6">
+                <section className="bg-[#121212] p-4 sm:p-6">
                   <time className="block text-xs text-gray-500">{blog.meta.date}</time>
 
                   <h3 className="mt-0.5 text-lg text-white">{blog.meta.title}</h3>

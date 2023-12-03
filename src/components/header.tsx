@@ -1,9 +1,11 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid'
+import { UserContext } from '@/context/UserContext'
+
 
 const navLinks = [
     {
@@ -21,6 +23,7 @@ const navLinks = [
 ]
 export default function Header() {
 
+    const { user } = useContext(UserContext);
     const [navbarOpen, setNavbarOpen] = useState(false)
 
     return (
@@ -38,20 +41,26 @@ export default function Header() {
                     />
                 </Link>
                 <section className='flex gap-4'>
-                    <Link href="/auth/login">
-                        <button
-                            className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-                        >
-                            Login
-                        </button>
-                    </Link>
-                    <Link href="/auth/registrarse">
-                        <button
-                            className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
-                        >
-                            Register
-                        </button>
-                    </Link>
+                    {!user.token ? (
+                        <>
+                            <Link href="/auth/login">
+                                <button
+                                    className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
+                                >
+                                    Login
+                                </button>
+                            </Link>
+                            <Link href="/auth/registrarse">
+                                <button
+                                    className="block rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75"
+                                >
+                                    Register
+                                </button>
+                            </Link>
+                        </>
+                    ) : (
+                        <p className='text-white'>Bienvenido, {user.nombre}!</p> // Esto puede variar según la estructura de tu user object
+                    )}
                 </section>
 
 
