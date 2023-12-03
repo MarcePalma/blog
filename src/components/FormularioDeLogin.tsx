@@ -41,7 +41,7 @@ export default function FormularioDeLogin() {
 
     const { token, nombre } = await respuesta.json();
 
-    // Guardar el token y el nombre en el contexto de usuario
+    localStorage.setItem("usuario", JSON.stringify({ token, nombre }));
     setUser({ token, nombre });
 
     router.push("/");

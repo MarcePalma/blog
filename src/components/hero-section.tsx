@@ -1,11 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import { LinkParticles } from './particles'
+import { TypeAnimation } from 'react-type-animation'
 
 export default function HeroSection() {
   return (
     <section className="text-white lg:py-16 relative overflow-hidden">
-      <LinkParticles/>
+      <LinkParticles />
       <article className="grid grid-cols-1 sm:grid-cols-12 relative">
         <div className="col-span-12 sm:col-span-8 place-self-center text-center sm:text-left justify-self-start">
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
@@ -13,6 +14,18 @@ export default function HeroSection() {
               Bienvenidos a mi blog!
             </span>
           </h1>
+          <br />
+
+          <TypeAnimation
+            sequence={[
+              'Explorando la historia',
+              2000,
+            ]}
+            wrapper="span"
+            speed={10}
+            style={{ fontSize: '2em', display: 'inline-block' }}
+            repeat={Infinity}
+          />
         </div>
         <div className="col-span-12 sm:col-span-4 place-self-center mt-4 lg:mt-0">
           <div className="rounded-full w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">

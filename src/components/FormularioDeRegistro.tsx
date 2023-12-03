@@ -41,7 +41,7 @@ export default function FormularioDeRegistro() {
             {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json", 
                 },
                 body: JSON.stringify(datosAEnviar),
             }
@@ -53,6 +53,7 @@ export default function FormularioDeRegistro() {
         }
 
         const { token } = await respuesta.json();
+
 
         setUser({ ...datosAEnviar, token });
 
