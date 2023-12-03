@@ -23,7 +23,7 @@ export default function FormularioDeLogin() {
 
     console.log(datosAEnviar);
 
-    const respuesta = await fetch("https://blog-blxphemsh-marcepalma.vercel.app/api/usuarios/login", {
+    const respuesta = await fetch("https://blog-marcepalma.vercel.app/api/usuarios/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
