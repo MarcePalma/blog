@@ -1,25 +1,10 @@
 "use client"
 
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { UserContext } from '@/context/UserContext'
 
-
-const navLinks = [
-    {
-        title: 'About',
-        path: '#about',
-    },
-    {
-        title: 'Projects',
-        path: '#projects',
-    },
-    {
-        title: 'Contact',
-        path: '#contact',
-    }
-]
 export default function Header() {
 
     const { user } = useContext(UserContext);
