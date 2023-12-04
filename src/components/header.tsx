@@ -3,7 +3,6 @@
 import { useState, useContext } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid'
 import { UserContext } from '@/context/UserContext'
 
 
