@@ -24,7 +24,6 @@ const navLinks = [
 export default function Header() {
 
     const { user } = useContext(UserContext);
-    const [navbarOpen, setNavbarOpen] = useState(false)
 
     return (
         <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
